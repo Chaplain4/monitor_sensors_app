@@ -29,6 +29,7 @@ public class Sensor {
     @OneToOne()
     @JoinColumn(name = "type_id")
     private Type type;
+    @JsonProperty("unit")
     @OneToOne()
     @JoinColumn(name = "unit_id")
     private Unit unit;

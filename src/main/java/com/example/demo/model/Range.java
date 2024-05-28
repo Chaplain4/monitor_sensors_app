@@ -10,11 +10,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "ranges")
 public class Range {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonIgnore
+    private Integer id;
+    @Column (name = "start_value")
     private Integer from;
-    @Column
+    @Column (name = "end_value")
     private Integer to;
 }
