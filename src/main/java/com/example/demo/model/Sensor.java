@@ -14,23 +14,23 @@ import lombok.NoArgsConstructor;
 @Table(name = "sensors")
 public class Sensor {
     @Id
+    @JsonProperty("id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
     private Integer id;
     @Column
     private String name;
     @Column
     private String model;
     @JsonProperty("range")
-    @OneToOne()
+    @ManyToOne()
     @JoinColumn(name = "range_id")
     private Range range;
     @JsonProperty("type")
-    @OneToOne()
+    @ManyToOne()
     @JoinColumn(name = "type_id")
     private Type type;
     @JsonProperty("unit")
-    @OneToOne()
+    @ManyToOne()
     @JoinColumn(name = "unit_id")
     private Unit unit;
     @Column
